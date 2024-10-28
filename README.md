@@ -19,4 +19,11 @@ Incase you get an error: cannot be loaded because running scripts is disabled on
 ```
  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
-then activate the virtual env using the code above
+then activate the virtual env using the code above. Once activated it will look like,
+
+![](https://github.com/MithamoMorgan/Apache-Airflow/blob/master/venv%20activation.jpg)
+
+To set the `AIRFLOW-HOME` variable to current directory, use the following syntax:
+```
+$env:AIRFLOW_HOME = "."
+```
