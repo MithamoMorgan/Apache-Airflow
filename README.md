@@ -27,3 +27,8 @@ To set the `AIRFLOW-HOME` variable to current directory, use the following synta
 ```
 $env:AIRFLOW_HOME = "."
 ```
+To confirm if set correctly, run the following command:
+```
+$env:AIRFLOW_HOME
+```
+If set correctly you should see `.` (representing the current directory)
