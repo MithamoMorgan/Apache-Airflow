@@ -11,8 +11,15 @@ Get everything you need to kick start your Airflow journey [here](https://www.da
 ## Fixing the error: Missing AIRFLOW_UID Variable
 [Link](https://ourtechroom.com/tech/fix-airflow-error-missing-airflow-uid-variable/)
 
+## Running Airflow with docker
+
+Navigate to Your Project Directory (where your docker-compose.yml is located):
+
+**Start Airflow:** Run the following command: `docker-compose up`
+
 ## Note:
 The default link for the Apache Airflow UI is:
 `http://localhost:8080
 `
+
 
