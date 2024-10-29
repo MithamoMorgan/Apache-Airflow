@@ -26,4 +26,10 @@ The default link for the Apache Airflow UI is:
 `http://localhost:8080
 `
 
+## Example
+
+### Using Apache Airflow to Build a Pipeline for Scraped Data:
+
+Here is the [link](https://oxylabs.io/blog/building-scraping-pipeline-apache-airflow?utm_source=youtube&utm_medium=organic_video&utm_content=Building%20Scraping%20Pipelines%20With%20Apache%20Airflow) to the website
+
 
