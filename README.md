@@ -11,3 +11,8 @@ Get everything you need to kick start your Airflow journey [here](https://www.da
 ## Fixing the error: Missing AIRFLOW_UID Variable
 [Link](https://ourtechroom.com/tech/fix-airflow-error-missing-airflow-uid-variable/)
 
+## Note:
+The default link for the Apache Airflow UI is:
+`http://localhost:8080
+`
+
