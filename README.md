@@ -15,7 +15,9 @@ Get everything you need to kick start your Airflow journey [here](https://www.da
 
 Navigate to Your Project Directory (where your docker-compose.yml is located):
 
-**Start Airflow:** Run the following command: `docker-compose up`
+* **Start Airflow:** Run the following command: `docker-compose up`
+* `docker-compose down`: Stops and removes containers and networks but keeps volumes.
+* `docker-compose down -v`: Stops and removes containers, networks, and also deletes volumes, losing all stored data
 
 ## Note:
 The default link for the Apache Airflow UI is:
