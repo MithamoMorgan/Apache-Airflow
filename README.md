@@ -21,6 +21,8 @@ Navigate to Your Project Directory (where your docker-compose.yml is located):
 
 * `docker-compose down -v`: Stops and removes containers, networks, and also deletes volumes, losing all stored data. Use when you want to completely clean up your Docker environment, including any persistent data stored in volumes. This is useful when you want to start fresh or when you're troubleshooting issues and want to ensure no leftover data affects the new setup.
 
+**NB:** For `docker-compose up -d` to work, Docker Desktop must be running. Docker Desktop provides the Docker Engine, which is necessary to manage and run your containers. If it's not open, you'll need to start it before running your command.
+
 ## Note:
 The default link for the Apache Airflow UI is:
 `http://localhost:8080
