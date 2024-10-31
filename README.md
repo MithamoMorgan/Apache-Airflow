@@ -34,4 +34,8 @@ The default link for the Apache Airflow UI is:
 
 Here is the [link](https://oxylabs.io/blog/building-scraping-pipeline-apache-airflow?utm_source=youtube&utm_medium=organic_video&utm_content=Building%20Scraping%20Pipelines%20With%20Apache%20Airflow) to the website
 
+## DAGs Runs
 
+* Note that if you are running a DAG on schedule_interval of one day, the run stamped 2024-10-30 will be triggered as soon after 2024-10-30T23:59. In other words, the job instance is started once the period it covers has ended.
+
+* The scheduler runs your job one schedule interval after the start date, at the end of the period.
