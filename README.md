@@ -39,3 +39,16 @@ Here is the [link](https://oxylabs.io/blog/building-scraping-pipeline-apache-air
 * Note that if you are running a DAG on schedule_interval of one day, the run stamped 2024-10-30 will be triggered as soon after 2024-10-30T23:59. In other words, the job instance is started once the period it covers has ended.
 
 * The scheduler runs your job one schedule interval after the start date, at the end of the period.
+
+* Note:
+
+| Preset    | Meaning                                                             |
+|-----------|---------------------------------------------------------------------|
+| None      | Don’t schedule, use for exclusively “externally triggered” DAGs     |
+| @once     | Schedule once and only once                                          |
+| @hourly   | Run once an hour at the beginning of the hour                       |
+| @daily    | Run once a day at midnight                                          |
+| @weekly   | Run once a week at midnight on Sunday morning                       |
+| @monthly  | Run once a month at midnight of the first day of the month         |
+| @yearly   | Run once a year at midnight of January 1                            |
+
