@@ -55,12 +55,15 @@ Here is the [link](https://oxylabs.io/blog/building-scraping-pipeline-apache-air
 ## Steps to access the csv file from my scraping dag
 
 1. **Get into the Airflow Worker Container:** You need to access the specific container where the scraping task ran. You can do this with the following command:
+   
    `docker exec -it airflow_materials-airflow-worker-1 /bin/bash
 `
 2. **Navigate to the Directory:** Once you're inside the container, navigate to the directory where the CSV file is supposed to be saved:
+   
     `cd /opt/airflow/airflow_data
 `
 3. **Check for the File:** List the files in that directory to see if your CSV file is there:
+
    `ls`
 
 
