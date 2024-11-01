@@ -66,5 +66,10 @@ Here is the [link](https://oxylabs.io/blog/building-scraping-pipeline-apache-air
 
    `ls`
 
+4. **Copy the File:** In the new terminal window, use the docker cp command to copy the CSV file from the container to your local machine:
+
+   `docker cp airflow_materials-airflow-worker-1:/opt/airflow/airflow_data/car_df.csv C:\Users\User\Airflow_Materials
+`
+
 
 
