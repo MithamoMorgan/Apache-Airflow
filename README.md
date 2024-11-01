@@ -140,6 +140,16 @@ with DAG(
 scrape_task
 ```
 
+## Note:
+
+```python
+    # Create directory if it doesn't exist
+    dir_path = '/opt/airflow/airflow_data'
+    os.makedirs(dir_path, exist_ok=True)
+```
+The code above creates a folder inside the filesystem of the Docker container where the command is executed. 
+
+
 ## Steps to access the csv file
 
 1. **Get into the Airflow Worker Container:** You need to access the specific container where the scraping task ran. You can do this with the following command:
