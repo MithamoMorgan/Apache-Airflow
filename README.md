@@ -140,7 +140,7 @@ with DAG(
 scrape_task
 ```
 
-## Steps to access the csv file from my scraping dag
+## Steps to access the csv file
 
 1. **Get into the Airflow Worker Container:** You need to access the specific container where the scraping task ran. You can do this with the following command:
    
