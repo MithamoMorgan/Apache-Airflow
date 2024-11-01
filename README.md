@@ -166,8 +166,7 @@ The code above creates a folder inside the filesystem of the Docker container wh
 
 4. **Copy the File:** In the new terminal window, use the docker cp command to copy the CSV file from the container to your local machine:
 
-   `docker cp airflow_materials-airflow-worker-1:/opt/airflow/airflow_data/car_df.csv C:\Users\User\Airflow_Materials
-`
+   `docker cp airflow_materials-airflow-worker-1:/opt/airflow/airflow_data/car_df.csv C:\Users\User\Airflow_Materials`
 
 
 
