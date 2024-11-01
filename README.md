@@ -121,7 +121,7 @@ def scrape():
     
     flash_sale_data = pd.DataFrame(details_list)
     # save in a csv file
-    flash_sale_data.to_csv(os.path.join(dir_path, 'car_df.csv'), index=False)
+    flash_sale_data.to_csv(os.path.join(dir_path, 'jumia_df.csv'), index=False)
 
 
 with DAG(
