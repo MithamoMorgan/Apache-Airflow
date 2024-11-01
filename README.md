@@ -52,6 +52,94 @@ Here is the [link](https://oxylabs.io/blog/building-scraping-pipeline-apache-air
 | @monthly  | Run once a month at midnight of the first day of the month         |
 | @yearly   | Run once a year at midnight of January 1                            |
 
+## Example Code: Scraping Jumia Flash sales data:
+
+```python
+import os
+import pandas as pd
+from bs4 import BeautifulSoup
+import requests
+from urllib.parse import urljoin
+from airflow import DAG
+from datetime import datetime, timedelta
+from airflow.operators.python_operator import PythonOperator
+
+default_args = {
+    'owner':'devscraper',
+    'retries':2,
+    'retry_delay':timedelta(minutes = 1)
+}
+
+def scrape():
+
+    # Create directory if it doesn't exist
+    dir_path = '/opt/airflow/airflow_data'
+    os.makedirs(dir_path, exist_ok=True)
+
+    url = 'https://www.jumia.co.ke/flash-sales/' 
+    details_list = []
+    
+    while True:
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        details = soup.find_all('div', class_ = 'info')
+        footers  = soup.find_all('footer', class_ = 'ft')
+    
+        for detail,footer in zip(details,footers):
+            name = detail.find('h3', class_ = 'name').text.strip()
+            price =  detail.find('div', class_ = 'prc').text.strip()
+            try:
+                old_price = detail.find('div', class_ = 'old').text.strip()
+            except:
+                old_price = " "
+            try:
+                discount = detail.find('div', class_ = 'bdg _dsct _sm').text.strip()
+            except:
+                discount = " "
+            try:
+                stars_reviews = detail.find('div', class_ = 'rev').text.strip()
+            except:
+                stars_reviews = " "
+        
+            try:
+                items_left = footer.find('div', class_ = 'stk').text.strip()
+            except:
+                items_left = " Out of stock"
+                
+                
+        
+            details_dict = {'Name':name,'price':price,'Old Price':old_price,'discount':discount,'Stars and Reviews':stars_reviews,'Items Left':items_left}
+            details_list.append(details_dict)
+    
+        next_page = soup.find('a',{'class':'pg', 'aria-label':'Next Page'})
+        if next_page:
+            next_url = next_page.get('href')
+            url = urljoin(url,next_url)
+        else:
+            break
+    
+    flash_sale_data = pd.DataFrame(details_list)
+    # save in a csv file
+    flash_sale_data.to_csv(os.path.join(dir_path, 'car_df.csv'), index=False)
+
+
+with DAG(
+    dag_id = 'jumia_scraping_dag',
+    default_args = default_args,
+    description = 'Writing my first dag to scrape data',
+    start_date = datetime(2024,10,31, 11),
+    schedule_interval = '@hourly'
+) as dag :
+
+    scrape_task = PythonOperator(
+        task_id = 'scrape',
+        python_callable = scrape
+    )
+
+scrape_task
+```
+
 ## Steps to access the csv file from my scraping dag
 
 1. **Get into the Airflow Worker Container:** You need to access the specific container where the scraping task ran. You can do this with the following command:
