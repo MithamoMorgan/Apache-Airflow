@@ -175,5 +175,6 @@ So one need to mount the host directory to the container's directory. Here is an
 ```
 C:\Users\User\Desktop\AirflowData\csv:/opt/airflow/airflow_data/csv
 ```
+Where `C:\Users\User\Desktop\AirflowData\csv` is the host directory and `/opt/airflow/airflow_data/csv` is the container's directory.
 
 
