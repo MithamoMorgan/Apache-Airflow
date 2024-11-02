@@ -168,6 +168,12 @@ The code above creates a folder inside the filesystem of the Docker container wh
 
    `docker cp airflow_materials-airflow-worker-1:/opt/airflow/airflow_data/car_df.csv C:\Users\User\Airflow_Materials`
 
-**NB:** When Airflow is running inside a Docker container, it does not have direct access to the host machine's filesystem unless that filesystem is explicitly shared with the container.
+**NB:** When Airflow is running inside a Docker container, it does not have direct access to the host machine's filesystem unless that filesystem is explicitly shared with the container. 
+
+So one need to mount the host directory to the container's directory. Here is an example:
+
+```
+C:\Users\User\Desktop\AirflowData\csv:/opt/airflow/airflow_data/csv
+```
 
 
