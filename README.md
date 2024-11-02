@@ -178,7 +178,7 @@ C:\Users\User\Desktop\AirflowData\csv:/opt/airflow/airflow_data/csv
 
 * Where `C:\Users\User\Desktop\AirflowData\csv` is the host directory and `/opt/airflow/airflow_data/csv` is the container's directory.
 
-* Add the line above under `volumes` in the `x-airflow-common` section and it should look something similar to this:
+* Add the line above in the yaml file under `volumes` in the `x-airflow-common` section and it should look something similar to this:
 
 ```yaml
 volumes:
@@ -188,5 +188,3 @@ volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - C:/Users/User/Desktop/AirflowData/csv:/opt/airflow/airflow_data/csv
 ``` 
-
-
