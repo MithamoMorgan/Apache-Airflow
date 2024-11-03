@@ -142,7 +142,7 @@ scrape_task
 
 ## Code Explanation:
 
-## The path `dir_path = '/opt/airflow/airflow_data/csv'`:
+### 1. `dir_path = '/opt/airflow/airflow_data/csv'`:
 
 `/`: This is the root directory in a Unix-like file system.
 
@@ -153,14 +153,21 @@ scrape_task
 `airflow_data`: This subdirectory is designated for data specific to Airflow.
 
 `csv`: This is a subdirectory within airflow_data, which stores CSV files.
-## Note:
+
+### 2. Create a directory if it does not exist:
 
 ```python
-    # Create directory if it doesn't exist
-    dir_path = '/opt/airflow/airflow_data'
     os.makedirs(dir_path, exist_ok=True)
 ```
-The code above creates a folder inside the filesystem of the Docker container where the command is executed. 
+The code above creates a folder inside the filesystem of the Docker container where the command is executed.
+
+`os`: This is the operating system module in Python that provides a way to interact with the file system.
+
+`makedirs`: This function creates the specified directory path. If any intermediate directories in the path do not exist, it will create them as well.
+
+`dir_path`: This variable contain the path to the directory to be created
+
+`exist_ok=True`: This argument tells makedirs to not raise an error if the target directory already exists. If exist_ok were set to False (the default), the function would raise a FileExistsError if the directory already exists.
 
 
 ## Steps to access the csv file
