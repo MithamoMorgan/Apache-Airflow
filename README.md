@@ -197,9 +197,9 @@ The result is a complete file path, like `/opt/airflow/airflow_data/csv/jumia_df
 
 4. **Copy the File:** In the new terminal window, use the docker cp command to copy the CSV file from the container to your local machine:
 
-   `docker cp airflow_materials-airflow-worker-1:/opt/airflow/airflow_data/csv/car_df.csv C:\Users\User\your_directory_choice`
+   `docker cp airflow_materials-airflow-worker-1:/opt/airflow/airflow_data/csv/jumia_df.csv C:\Users\User\your_directory_choice`
 
-*NB*: The command copies the file car_df.csv from the specified path inside the Docker container `/opt/airflow/airflow_data/csvcar_df.csv` to the local directory `C:\Users\User\your_directory_choice`
+*NB*: The command copies the file  `jumia_df.csv` from the specified path inside the Docker container `/opt/airflow/airflow_data/csv/jumia_df.csv` to the local directory `C:\Users\User\your_directory_choice`
 
 ### Note:
 
