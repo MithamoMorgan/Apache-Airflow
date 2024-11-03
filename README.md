@@ -140,6 +140,19 @@ with DAG(
 scrape_task
 ```
 
+## Code Explanation:
+
+* `dir_path = '/opt/airflow/airflow_data/csv'`:
+
+`/`: This is the root directory in a Unix-like file system.
+
+`opt`: This directory is typically used for optional software packages. It's often where third-party applications are installed.
+
+`airflow`: This refers to Apache Airflow, a platform to programmatically author, schedule, and monitor workflows. The presence of this directory suggests that Airflow is installed on this system.
+
+`airflow_data`: This subdirectory is designated for data specific to Airflow.
+
+`csv`: This is a subdirectory within airflow_data, which stores CSV files.
 ## Note:
 
 ```python
