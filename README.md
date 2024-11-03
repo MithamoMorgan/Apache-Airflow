@@ -181,7 +181,7 @@ The code above creates a folder inside the filesystem of the Docker container wh
 
 The result is a complete file path, like `/opt/airflow/airflow_data/csv/jumia_df.csv.`
 
-## Steps to access the csv file
+## How to check if the csv file exist
 
 1. **Get into the Airflow Worker Container:** You need to access the specific container where the scraping task ran. You can do this with the following command:
    
@@ -189,7 +189,7 @@ The result is a complete file path, like `/opt/airflow/airflow_data/csv/jumia_df
 `
 2. **Navigate to the Directory:** Once you're inside the container, navigate to the directory where the CSV file is supposed to be saved:
    
-    `cd /opt/airflow/airflow_data
+    `cd /opt/airflow/airflow_data/csv
 `
 3. **Check for the File:** List the files in that directory to see if your CSV file is there:
 
@@ -197,7 +197,9 @@ The result is a complete file path, like `/opt/airflow/airflow_data/csv/jumia_df
 
 4. **Copy the File:** In the new terminal window, use the docker cp command to copy the CSV file from the container to your local machine:
 
-   `docker cp airflow_materials-airflow-worker-1:/opt/airflow/airflow_data/car_df.csv C:\Users\User\Airflow_Materials`
+   `docker cp airflow_materials-airflow-worker-1:/opt/airflow/airflow_data/csv/car_df.csv C:\Users\User\your_directory_choice`
+
+*NB*: The command copies the file car_df.csv from the specified path inside the Docker container `/opt/airflow/airflow_data/csvcar_df.csv` to the local directory `C:\Users\User\your_directory_choice`
 
 ### Note:
 
