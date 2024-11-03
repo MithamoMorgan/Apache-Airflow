@@ -169,6 +169,17 @@ The code above creates a folder inside the filesystem of the Docker container wh
 
 `exist_ok=True`: This argument tells makedirs to not raise an error if the target directory already exists. If exist_ok were set to False (the default), the function would raise a FileExistsError if the directory already exists.
 
+### 3. `os.path.join(dir_path, 'jumia_df.csv')`:
+
+`os.path.join `: used to create a file path that is compatible with the operating system you're working on (it handles the appropriate path separators ie `/`).
+
+`dir_path`: the directory where I want to save the CSV file.
+
+`'jumia_df.csv'`: is the name of the file I want to create.
+
+`index=False`: This argument tells the to_csv method not to write row indices to the CSV file.
+
+The result is a complete file path, like `/opt/airflow/airflow_data/csv/jumia_df.csv.`
 
 ## Steps to access the csv file
 
