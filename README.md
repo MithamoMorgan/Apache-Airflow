@@ -142,7 +142,7 @@ scrape_task
 
 ## Code Explanation:
 
-* `dir_path = '/opt/airflow/airflow_data/csv'`:
+## The path `dir_path = '/opt/airflow/airflow_data/csv'`:
 
 `/`: This is the root directory in a Unix-like file system.
 
